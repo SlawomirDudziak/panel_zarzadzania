@@ -1,0 +1,154 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: rgb(44, 30, 30); */
+    background: linear-gradient(to left, #888, transparent);
+    font-weight: 300;
+}
+
+a, a:visited {
+    color: #4CAF50;
+    text-decoration: none;
+    letter-spacing: 3px;
+    /* font-size: 1.25rem; */
+}
+
+#container {
+    display: flex;
+}
+
+#left{
+    flex-basis: 25%;
+}
+
+#right{
+    flex-basis: 75%;
+}
+
+#menu {
+    padding: 30px;
+    font-weight: 700;
+}
+
+#delegations{
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+#delegations td, #delegations th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#delegations th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#contractors {
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+#contractors td, #contractors th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#contractors th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    /* background: linear-gradient(to left, #4CAF50, #888); */
+    color: white;
+}
+
+button{
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    transition: opacity 300ms ease-in-out;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#add{
+    background: linear-gradient(to left, #4CAF50, #888);
+}
+
+#edit{
+    background: linear-gradient(to left, blue, #888);
+}
+
+#delete{
+    background: linear-gradient(to left,red, #888);
+}
+
+#employees{
+    border-collapse: collapse;
+}
+
+#employees td, #employees th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#employees th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#employees tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#colorpicker1,
+#colorpicker2,
+#colorpicker3 { 
+    cursor: pointer; 
+}
+
+#factures {
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+#factures td, #factures th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#factures th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#changeColorBtn {
+    background: linear-gradient(to left, #4CAF50, #888);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#changeColorBtn:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+    }
+}
