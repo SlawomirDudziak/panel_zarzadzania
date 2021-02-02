@@ -16,7 +16,7 @@
 		
 		if($connection->connect_errno!=0)
 		{
-			echo "Error: ".$connection->connect_errno."Opis: ".$connection->connect_error;
+			echo "Error: ".$connection->connect_errno." Description: ".$connection->connect_error;
 		}
 		$query = mysqli_query($connection,"SELECT * FROM delegacje");
 

@@ -31,7 +31,7 @@
 		
 		if($connection->connect_errno!=0)
 		{
-			echo "Error: ".$connection->connect_errno."Description: ".$connection->connect_error;
+			echo "Error: ".$connection->connect_errno." Description: ".$connection->connect_error;
 		}
 		$wynik = mysqli_query($connection,"SELECT * FROM kontrahenci");
 		$i=0;

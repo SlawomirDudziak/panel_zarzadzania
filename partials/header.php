@@ -14,10 +14,8 @@
 	<div id="left">
 		<div id="menu">
 			<a href="employees-table.php">Tabela Pracowników</a><br/><br/>
-			<a href="VAT-factures-table.php">Tabela Faktur VAT
-			</a><br/><br/>
+			<a href="VAT-factures-table.php">Tabela Faktur VAT</a><br/><br>
 			<a href="delegations-table.php">Tabela Delegacji</a><br/><br/>
-			<a href="contractors-data.php">Dane Kontrahentów
-			</a>
+			<a href="contractors-data.php">Dane Kontrahentów</a>
 		</div>
 	</div>
