@@ -1,26 +1,32 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    /* background-color: rgb(44, 30, 30); */
     background: linear-gradient(to left, #888, transparent);
     font-weight: 300;
+}
+
+a {
+    transition: all 0.2s ease-in-out;
 }
 
 a, a:visited {
     color: #4CAF50;
     text-decoration: none;
     letter-spacing: 3px;
-    /* font-size: 1.25rem; */
+}
+
+a:hover {
+    letter-spacing: 5px;
 }
 
 #container {
     display: flex;
 }
 
-#left{
+#left {
     flex-basis: 25%;
 }
 
-#right{
+#right {
     flex-basis: 75%;
 }
 
@@ -29,7 +35,7 @@ a, a:visited {
     font-weight: 700;
 }
 
-#delegations{
+#delegations {
     border-collapse: collapse;
     background-color: #fff;
 }
@@ -62,35 +68,34 @@ a, a:visited {
     padding-bottom: 12px;
     text-align: left;
     background-color: #4CAF50;
-    /* background: linear-gradient(to left, #4CAF50, #888); */
     color: white;
 }
 
-button{
+button {
     padding: 5px;
     border-radius: 5px;
     color: #fff;
     transition: opacity 300ms ease-in-out;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
     opacity: 0.5;
 }
 
-#add{
+#add {
     background: linear-gradient(to left, #4CAF50, #888);
 }
 
-#edit{
+#edit {
     background: linear-gradient(to left, blue, #888);
 }
 
-#delete{
+#delete {
     background: linear-gradient(to left,red, #888);
 }
 
-#employees{
+#employees {
     border-collapse: collapse;
 }
 

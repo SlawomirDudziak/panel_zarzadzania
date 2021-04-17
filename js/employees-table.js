@@ -4,8 +4,7 @@ function changeColor() {
 	let color2 = document.getElementById("colorpicker2").value;
 	let color3 = document.getElementById("colorpicker3").value;
 	let employees = document.getElementById("employees");
-	for (let i = 0; i < rows.length; i++) 
-	{
+	for (let i = 0; i < rows.length; i++) {
 		if(i % 2 == 0)	// numeration from 0 
 			rows[i].style.backgroundColor = color2;
 		else
