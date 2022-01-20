@@ -12,7 +12,7 @@
 	}
 	
 	// delete data from database
-	if ($connection->query("DELETE FROM kontrahenci WHERE NIP='$editnipid'")) {
+	if ($connection->query("DELETE FROM kontrahenci WHERE id='$editnipid'")) {
 		
 	}
 	else {

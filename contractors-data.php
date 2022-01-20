@@ -4,6 +4,7 @@
 		<table width="800" id="contractors">
 		<tr>
 			<th>Wybierz</th>
+			<th>ID</th>
 			<th>NIP</th>
 			<th>REGON</th>
 			<th>NAZWA</th>
@@ -14,6 +15,7 @@
 		</tr>
 		<tr class="tr">
 			<form method="post" id="form1" action="functions/add.php">
+				<td></td>
 				<td></td>
 				<td><input type="text" id="NIP" value="4567891023" name="NIP" minlength="10" maxlength="10"/></td>
 				<td><input type="text" id="REGON" value="456789123" name="REGON" minlength="9" maxlength="9"/></td>
@@ -36,7 +38,8 @@
 		$i=0;
 		while($row = mysqli_fetch_array($wynik)) {
 			echo '<tr class="tr">';
-			echo "<td><input type='checkbox' value='$i' name='chosen' onclick='getId($i)'></td><td class='nip'>"
+			echo "<td><input type='checkbox' value='$row[id]' name='chosen' onclick='getId($row[id])'></td><td>"
+			.$row['id']."</td><td class='nip'>"
 			.$row['NIP']."</td><td class='regon'>"
 			.$row['REGON']."</td><td class='name'>"
 			.$row['nazwa']. "</td><td>"

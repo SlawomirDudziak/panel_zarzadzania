@@ -27,43 +27,28 @@
 	if ($connection->connect_errno!=0) {
 		echo "Error: ".$connection->connect_errno."Opis: ".$connection->connect_error;
 	}
-	
-	// checkbox is selected
-	if (isset($_POST['Platnik'])) {
-		// update database
-		if ($connection->query(sprintf("
-		UPDATE kontrahenci 
-		SET NIP='%s', REGON='%s', nazwa='%s', czyplatnikvat='TAK', ulica='%s', numerdomu='%s', numermieszkania='%s' 
-		WHERE NIP='%s'",
-		mysqli_real_escape_string($connection, $NIP),
-		mysqli_real_escape_string($connection, $REGON),
-		mysqli_real_escape_string($connection, $NAME),
-		mysqli_real_escape_string($connection, $STREET),
-		mysqli_real_escape_string($connection, $HOUSENUMBER),
-		mysqli_real_escape_string($connection, $FLATNUMBER),
-		mysqli_real_escape_string($connection, $editnipid)))) {
-			
-		} else {
-			throw new Exception($connection->error);
-		}
+
+	// if checkbox 'czy płatnik vat?' selected
+	if (isset($_POST['Platnik'])) $VATPAYER = 'TAK';
+	else $VATPAYER = 'NIE';
+	// update database
+	if ($connection->query(sprintf("
+	UPDATE kontrahenci 
+	SET NIP='%s', REGON='%s', nazwa='%s', czyplatnikvat='%s', ulica='%s', numerdomu='%s', numermieszkania='%s' 
+	WHERE id='%s'",
+	mysqli_real_escape_string($connection, $NIP),
+	mysqli_real_escape_string($connection, $REGON),
+	mysqli_real_escape_string($connection, $NAME),
+	mysqli_real_escape_string($connection, $VATPAYER),
+	mysqli_real_escape_string($connection, $STREET),
+	mysqli_real_escape_string($connection, $HOUSENUMBER),
+	mysqli_real_escape_string($connection, $FLATNUMBER),
+	mysqli_real_escape_string($connection, $editnipid)))) {
+		
 	} else {
-		// checkbox not selected
-		if ($connection->query(sprintf("
-		UPDATE kontrahenci 
-		SET NIP='%s', REGON='%s', nazwa='%s', czyplatnikvat='NIE', ulica='%s', numerdomu='%s', numermieszkania='%s' 
-		WHERE NIP='%s'",
-		mysqli_real_escape_string($connection, $NIP),
-		mysqli_real_escape_string($connection, $REGON),
-		mysqli_real_escape_string($connection, $NAME),
-		mysqli_real_escape_string($connection, $STREET),
-		mysqli_real_escape_string($connection, $HOUSENUMBER),
-		mysqli_real_escape_string($connection, $FLATNUMBER),
-		mysqli_real_escape_string($connection, $editnipid)))) {
-			
-		} else {
-			throw new Exception($connection->error);
-		}
+		throw new Exception($connection->error);
 	}
+	// end update
     header('Location: ../contractors-data.php');
     $connection->close();
 	}

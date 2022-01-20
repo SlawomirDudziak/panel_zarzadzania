@@ -11,34 +11,31 @@ function deleteContractor(){
 }
 function getId(id) {
     // get data from table
-    let nips = document.getElementsByClassName("nip");
-    let chosenOnes = document.getElementsByName("chosen");
-    let regons = document.getElementsByClassName("regon");
-    let names = document.getElementsByClassName("name");
-    let streets = document.getElementsByClassName("street");
-    let houseNumbers = document.getElementsByClassName("houseNumber");
-    let flatNumbers = document.getElementsByClassName("flatNumber");
-    
-    if(chosenOnes[id].checked) {
-        // assign a variable to chosen row from table
-        let chosen = nips[id].textContent;
-        let regon = regons[id].textContent;
-        let name = names[id].textContent;
-        let street = streets[id].textContent;
-        let houseNumber = houseNumbers[id].textContent;
-        let flatNumber = flatNumbers[id].textContent;
+    let checkboxes = document.getElementsByName("chosen");
 
-        // assign data to edition in form
-        document.getElementById("editnipid").value = chosen;
-        document.getElementById("NIP").value = chosen;
-        document.getElementById("REGON").value = regon;
-        document.getElementById("NAME").value = name;
-        document.getElementById("STREET").value = street;
-        document.getElementById("HOUSENUMBER").value = houseNumber;
-        document.getElementById("FLATNUMBER").value = flatNumber;
-        console.log(id, chosen);
-    }
-    else {
-        document.getElementById("editnipid").value = 0;
-    }
+    checkboxes.forEach(e => {
+        if (e.value == id) {
+            // var chosen = e.parentElement.parentElement.children[0];
+            var nip = e.parentElement.parentElement.children[2].textContent;
+            var regon = e.parentElement.parentElement.children[3].textContent;
+            var name = e.parentElement.parentElement.children[4].textContent;
+            var vatPayer = e.parentElement.parentElement.children[5].textContent;
+            var street = e.parentElement.parentElement.children[6].textContent;
+            var houseNumber = e.parentElement.parentElement.children[7].textContent;
+            var flatNumber = e.parentElement.parentElement.children[8].textContent;
+
+            // assign data to edition in form if checkbox is checked
+            if (e.checked) {
+                document.getElementById("NIP").value = nip;
+                document.getElementById("REGON").value = regon;
+                document.getElementById("NAME").value = name;
+                if (vatPayer === 'TAK') document.getElementById('PLATNIK').checked = true;
+                else document.getElementById('PLATNIK').checked = false;
+                document.getElementById("STREET").value = street;
+                document.getElementById("HOUSENUMBER").value = houseNumber;
+                document.getElementById("FLATNUMBER").value = flatNumber;
+                document.getElementById("editnipid").value = id;
+            }
+        }
+    });
 }

@@ -28,7 +28,7 @@
 	// checkbox is selected
 	if (isset($_POST['Platnik'])) {
 		// adding data to database
-		if ($connection->query(sprintf("INSERT INTO kontrahenci VALUES('%s','%s', '%s', 'TAK', '%s', '%s', '%s')",
+		if ($connection->query(sprintf("INSERT INTO kontrahenci VALUES('','%s','%s', '%s', 'TAK', '%s', '%s', '%s')",
 		mysqli_real_escape_string($connection, $NIP),
 		mysqli_real_escape_string($connection, $REGON),
 		mysqli_real_escape_string($connection, $NAME),
@@ -41,7 +41,7 @@
 		}
 	} else {
 		// checkbox not selected
-		if ($connection->query(sprintf("INSERT INTO kontrahenci VALUES('%s','%s', '%s', 'NIE', '%s', '%s', '%s')",
+		if ($connection->query(sprintf("INSERT INTO kontrahenci VALUES('','%s','%s', '%s', 'NIE', '%s', '%s', '%s')",
 		mysqli_real_escape_string($connection, $NIP),
 		mysqli_real_escape_string($connection, $REGON),
 		mysqli_real_escape_string($connection, $NAME),
